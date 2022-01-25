@@ -1,0 +1,37 @@
+html{
+    background-color: black;
+}
+
+/* FLEX */
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.start{
+    align-self: flex-start;
+}
+
+.end{
+    align-self: flex-end;
+}
+
+
+/* TEXTS */
+
+h1, h2, h3, h4,
+li, p{
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0%;
+}
