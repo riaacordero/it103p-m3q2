@@ -36,6 +36,23 @@ li, p{
     margin: 0%;
 }
 
+/* COLORS */
+
+.accent{
+    background-color:#DA4314;
+}
+.text-white{
+    color: #C4C4C4;
+}
+
+.text-black{
+    color: black;
+}
+
+.text-accent{
+    color: #DA4314
+}
+
 /* ANIMATION */
 #space {
     width: 2px;
