@@ -38,6 +38,19 @@ html{
     gap: 2em;
 }
 
+.button{
+    background: #DA4314;
+    border-radius: 100px;
+    width: 200px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-text{
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* TEXTS */
 
 h1, h2, h3, h4,
