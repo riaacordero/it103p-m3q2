@@ -27,6 +27,16 @@ html{
     align-self: flex-end;
 }
 
+/* ELEMENTS */
+
+.main{
+    margin: 5%;
+}
+.navbar{
+    position: fixed;
+    right: 5%;
+    gap: 2em;
+}
 
 /* TEXTS */
 
@@ -34,6 +44,25 @@ h1, h2, h3, h4,
 li, p{
     font-family: 'JetBrains Mono', monospace;
     margin: 0%;
+}
+
+li{
+    list-style: none;
+}
+
+.title{
+    position: relative;
+    font-size: 300px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DA4314;
+    text-transform: uppercase;
+    cursor:default;
+}
+
+.title-img{
+    position: absolute;
+    width: 400px;
 }
 
 /* COLORS */
