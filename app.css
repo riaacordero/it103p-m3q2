@@ -51,6 +51,16 @@ html{
     text-transform: uppercase;
 }
 
+.button:hover{
+    outline: solid;
+    color: #DA4314;
+    outline-color: #DA4314;
+    background-color: transparent;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
 /* TEXTS */
 
 h1, h2, h3, h4,
@@ -61,6 +71,11 @@ li, p{
 
 li{
     list-style: none;
+}
+
+li:hover{
+    color: #DA4314;
+    cursor: pointer;
 }
 
 .title{
