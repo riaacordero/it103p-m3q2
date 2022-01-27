@@ -1,3 +1,7 @@
+:root {
+    --accent-color: #DA4314;
+}
+
 html, body {
     margin: 0;
 }
@@ -42,10 +46,10 @@ html, body {
 }
 
 .button {
-    background: #DA4314;
+    background: var(--accent-color);
     border-radius: 100px;
-    width: 200px;
-    padding: 20px;
+    width: 20vw;
+    padding: 3.5vh;
     transition: all 0.2s ease-in-out;
 }
 
@@ -56,8 +60,8 @@ html, body {
 
 .button:hover {
     outline: solid;
-    color: #DA4314;
-    outline-color: #DA4314;
+    color: var(--accent-color);
+    outline-color: var(--accent-color);
     background-color: transparent;
     cursor: pointer;
     transform: scale(1.05);
@@ -80,30 +84,31 @@ h3, h4, li, p {
     font-family: 'JetBrains Mono', monospace;
 }
 
+h1 {
+    font-size: 5.9vw;
+}
+
+h2 {
+    font-size: 4vh;
+}
+
+h3 {
+    font-size: 3vmin;
+}
+
 li {
     list-style: none;
 }
 
 li:hover {
-    color: #DA4314;
+    color: var(--accent-color);
     cursor: pointer;
 }
-
-.title {
-    position: relative;
-    font-size: 300px;
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #DA4314;
-    text-transform: uppercase;
-    cursor:default;
-}
-
 
 /* COLORS */
 
 .accent {
-    background-color:#DA4314;
+    background-color:var(--accent-color);
 }
 
 .text-white {
@@ -115,7 +120,7 @@ li:hover {
 }
 
 .text-accent {
-    color: #DA4314
+    color: var(--accent-color);
 }
 
 
@@ -143,4 +148,21 @@ li:hover {
 
 .home {
     background-color: black;
+
+}
+
+.home main {
+    bottom: 0%;
+    position: fixed;
+}
+
+.title {
+    font-size: 25vw;
+    line-height: 20vw;
+    margin-bottom: 2vw;
+    color: transparent;
+    -webkit-text-stroke-width: .2vw;
+    -webkit-text-stroke-color: var(--accent-color);
+    text-transform: uppercase;
+    cursor:default;
 }
