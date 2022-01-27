@@ -15,7 +15,7 @@
 
 function imageExists(url) {
     let http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
+    http.open('GET', url, true);
     http.send();
     return http.status !== 404;
 }
@@ -23,8 +23,6 @@ function imageExists(url) {
 async function loadDragons() {
     let response = await fetch("https://api.spacexdata.com/v4/dragons");
     let dragons = await response.json();
-    console.log("DATA ISSSSSSSSSSS: " + dragons);
-    console.log(dragons[0]);
 
     let dragonsListDiv = document.getElementById("dragons-list");
     dragons.forEach(dragon => {
@@ -58,6 +56,49 @@ async function loadDragons() {
     });
 }
 
+async function loadRockets() {
+    let response = await fetch("https://api.spacexdata.com/v4/rockets");
+    let rockets = await response.json();
+
+    let rocketsListDiv = document.getElementById("rockets-list");
+    console.log("rocketssssssss");
+    rockets.forEach(rocket => {
+        let rocketImage = document.createElement("img");
+        let existingImageUrls = rocket["flickr_images"].filter(imageUrl => imageExists(imageUrl));
+        if (existingImageUrls.length !== 0) {
+            rocketImage.src = existingImageUrls[0];
+        }
+
+        let rocketName = document.createElement("h3");
+        rocketName.innerHTML = rocket.name;
+
+        let rocketMeasurement = document.createElement("p");
+        rocketMeasurement.innerHTML = `${rocket.height.meters} meters tall, ` 
+            + `${rocket.diameter.meters} meters wide, ` 
+            + `${rocket.mass.kg} kg heavy`;
+        
+        let rocketDesc = document.createElement("p");
+        rocketDesc.innerHTML = rocket.description;
+
+        let rocketTextDiv = document.createElement("div");
+        rocketTextDiv.classList.add("column");
+        rocketTextDiv.appendChild(rocketName);
+        rocketTextDiv.appendChild(rocketMeasurement);
+        rocketTextDiv.appendChild(rocketDesc);
+
+        let rocketDiv = document.createElement("div");
+        rocketDiv.classList.add("column");
+        rocketDiv.addEventListener("click", function() {
+            this.classList.toggle("rockets-item-active");
+        });
+
+        rocketDiv.appendChild(rocketImage);
+        rocketDiv.appendChild(rocketTextDiv);
+
+        rocketsListDiv.appendChild(rocketDiv);
+    });
+}
+
 function loadPage() {
     let pathDirectories = window.location.pathname.split("/");
     let currentPage = pathDirectories[pathDirectories.length - 1];
@@ -65,10 +106,12 @@ function loadPage() {
         case "dragons.html":
             loadDragons();
             break;
+        case "rockets.html":
+            loadRockets();
+            break;
         default:
             break;
     }
-    console.log(currentPage);
 }
 
 loadPage();
