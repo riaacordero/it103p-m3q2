@@ -1,44 +1,47 @@
-html{
-    background-color: black;
+html, body {
+    margin: 0;
 }
+
 
 /* FLEX */
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
 }
 
-.center{
+.center {
     justify-content: center;
     align-items: center;
 }
 
-.start{
+.start {
     align-self: flex-start;
 }
 
-.end{
+.end {
     align-self: flex-end;
 }
 
+
 /* ELEMENTS */
 
-.main{
+.main {
     margin: 5%;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     right: 5%;
     gap: 2em;
 }
 
-.button{
+.button {
     background: #DA4314;
     border-radius: 100px;
     width: 200px;
@@ -46,12 +49,12 @@ html{
     transition: all 0.2s ease-in-out;
 }
 
-.button-text{
+.button-text {
     text-align: center;
     text-transform: uppercase;
 }
 
-.button:hover{
+.button:hover {
     outline: solid;
     color: #DA4314;
     outline-color: #DA4314;
@@ -61,24 +64,32 @@ html{
     transition: all 0.2s ease-in-out;
 }
 
+
 /* TEXTS */
 
 h1, h2, h3, h4,
-li, p{
-    font-family: 'JetBrains Mono', monospace;
-    margin: 0%;
+li, p {
+    margin: 0;
 }
 
-li{
+h1, h2, button, strong {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h3, h4, li, p {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+li {
     list-style: none;
 }
 
-li:hover{
+li:hover {
     color: #DA4314;
     cursor: pointer;
 }
 
-.title{
+.title {
     position: relative;
     font-size: 300px;
     color: transparent;
@@ -88,30 +99,29 @@ li:hover{
     cursor:default;
 }
 
-.title-img{
-    position: absolute;
-    width: 400px;
-}
 
 /* COLORS */
 
-.accent{
+.accent {
     background-color:#DA4314;
 }
-.text-white{
+
+.text-white {
     color: #C4C4C4;
 }
 
-.text-black{
+.text-black {
     color: black;
 }
 
-.text-accent{
+.text-accent {
     color: #DA4314
 }
 
+
 /* ANIMATION */
-#space {
+
+.space {
     width: 2px;
     height: 2px;
     background: transparent;
@@ -126,5 +136,11 @@ li:hover{
     to{
         transform: translateY(-1500px);
     }
-    
+}
+
+
+/* HOME PAGE */
+
+.home {
+    background-color: black;
 }
