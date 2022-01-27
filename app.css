@@ -191,21 +191,50 @@ li:hover {
     background-color: black;
 }
 
-/* .catalog .title {
+.catalog .title {
+    font-size: 8vw;
     -webkit-text-stroke-width: .15vw;
-} */
+}
 
 .catalog-list {
     flex-wrap: wrap;
-    min-height: 60vh;
+    margin-top: 5vh;
+    min-height: 45vh;
     gap: 5vw;
 }
 
-.catalog-list a:hover {
-    color: var(--accent-color);
-    cursor: pointer;
+.catalog-item {
+    width: 125px;
+    height: 125px;
+    padding: 3vh 25px;
+    border-radius: 2vw;
+    border: .4vh solid silver;
+    filter: grayscale(100%);
+    background-size: cover;
 }
 
-.catalog-item img {
-    width: 15vw;
+.catalog-item:hover {
+    border: .4vh solid var(--accent-color);
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.catalog-item p {
+    text-transform: uppercase;
+}
+
+.catalog-item:hover p {
+    color: var(--accent-color);
+}
+
+.catalog-item.catalog-dragons {
+    background-image: url(assets/catalog_dragons.jpg);
+}
+
+.catalog-item.catalog-rockets {
+    background-image: url(assets/catalog_rockets.jpg);
+}
+
+.catalog-item.catalog-crew {
+    background-image: url(assets/catalog_crew.jpg);
 }
