@@ -72,6 +72,12 @@ header {
     transition: all 0.2s ease-in-out;
 }
 
+.page-title {
+    font-size: 8vw;
+    -webkit-text-stroke-width: .15vw;
+    text-transform: uppercase;
+}
+
 
 /* TEXTS */
 
@@ -191,11 +197,6 @@ li:hover {
     background-color: black;
 }
 
-.catalog .title {
-    font-size: 8vw;
-    -webkit-text-stroke-width: .15vw;
-}
-
 .catalog-list {
     flex-wrap: wrap;
     margin-top: 5vh;
@@ -237,4 +238,76 @@ li:hover {
 
 .catalog-item.catalog-crew {
     background-image: url(assets/catalog_crew.jpg);
+}
+
+
+/* DRAGONS PAGE */
+
+.dragons {
+    background-color: black;
+}
+
+.dragons-list {
+    flex-wrap: wrap;
+    margin-top: 5vh;
+    gap: 5vw;
+}
+
+.dragons-list > div {
+    width: 180px;
+    height: 180px;
+    border: .4vh solid silver;
+    border-radius: 2vw;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.dragons-list > div:hover {
+    border: .4vh solid var(--accent-color);
+    cursor: pointer;
+}
+
+.dragons-list div.dragons-item-active {
+    border: .4vh solid var(--accent-color);
+    width: 480px;
+}
+
+.dragons-list img {
+    background: silver;
+    object-fit: cover;
+    height: 100%;
+    width: 180px;
+    filter: grayscale(100%);
+}
+
+.dragons-list div:hover img {
+    filter: grayscale(0%);
+}
+
+.dragons-list div.dragons-item-active img {
+    filter: grayscale(0%);
+    margin-right: 1rem;
+}
+
+.dragons-list > div > div {
+    display: none;
+    gap: .25rem;
+    margin-top: 5px;
+}
+
+.dragons-list div.dragons-item-active > div {
+    display: flex;
+}
+
+.dragons-list h3 {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.dragons-list p {
+    color: silver;
+}
+
+.dragons-list div.dragons-item-active p {
+    margin-bottom: 5px;
 }
