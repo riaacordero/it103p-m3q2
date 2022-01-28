@@ -161,8 +161,15 @@ li:hover {
         transform:translateX(0px);
     }
     to{
-        transform: translateY(-1500px);
+        transform: translateY(-500px);
     }
+}
+
+
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
 @keyframes rotate-icon {
@@ -174,15 +181,14 @@ li:hover {
     }
 }
 
-
 /* HOME PAGE */
 
 .home main {
-    bottom: 0%;
-    position: fixed;
+    margin: 10%;
 }
 
 .home .title {
+    position: relative;
     font-size: 25vw;
     line-height: 20vw;
     margin-bottom: 2.5vw;
@@ -191,6 +197,15 @@ li:hover {
     cursor:default;
 }
 
+.home .button{
+    margin-top: 5%;
+}
+
+.title-img{
+    position: absolute;
+    width: 400px;
+    animation: bounce 4s linear infinite;
+}
 
 /* CATALOG PAGE */
 
