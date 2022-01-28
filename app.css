@@ -333,7 +333,7 @@ p{
 
 .rockets .list div.rockets-item-active {
     border: .4vh solid var(--accent-color);
-    height: 450px;
+    height: 600px;
 }
 
 .rockets .list > div > div {
@@ -355,6 +355,7 @@ p{
 
 .rockets .list div.rockets-item-active > img {
     filter: grayscale(0%);
+    height: 180px;
 }
 
 .rockets .list h3 {
