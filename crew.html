@@ -13,13 +13,25 @@
     <title>SpaceX Archives - Crew</title>
 </head>
 
-<body>
+<body class="crew">
     <header>
         <ul class="navbar text-white row">
             <a href="index.html"><li>home</li></a>
             <a href="catalog.html"><li>catalog</li></a>
             <a href="developers.html"><li>developers</li></a>
         </ul>
+
+        <div class="space"></div>
+
+        <main class="main center column">
+            <h1 class="page-title text-stroke-accent">Crew</h1>
+            <div class="center row">
+                <p class="btn-arrow text-white" onclick="moveCrewItems(true)">&#9664</p>
+                <div id="crew-list" class="list center row"></div>
+                <p class="btn-arrow text-white" onclick="moveCrewItems(false)">&#9654</p>
+            </div>
+            <h2 id="crew-item-name" class="text-white"></h2>
+        </main>
     </header>
     
     <script src="app.js"></script>

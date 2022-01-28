@@ -20,6 +20,23 @@ function imageExists(url) {
     return http.status !== 404;
 }
 
+function moveCrewItems(isLeft) {
+    let crewItems = document.getElementById("crew-list").children;
+
+    console.log(crewItems);
+
+    for (let i = 0; i < crewItems.length; i++) {
+        let currentOrder = parseInt(crewItems[i].style.order);
+        console.log(`current index is ${i}, order is ${currentOrder}`);
+        if (isLeft) {
+            crewItems[i].style.order = (currentOrder + 1) % crewItems.length;
+        } else {
+            crewItems[i].style.order = (currentOrder + crewItems.length - 1) % crewItems.length;
+        }
+        console.log(`order changed to ${crewItems[i].style.order}`);
+    }
+}
+
 async function loadDragons() {
     let response = await fetch("https://api.spacexdata.com/v4/dragons");
     let dragons = await response.json();
@@ -61,7 +78,6 @@ async function loadRockets() {
     let rockets = await response.json();
 
     let rocketsListDiv = document.getElementById("rockets-list");
-    console.log("rocketssssssss");
     rockets.forEach(rocket => {
         let rocketImage = document.createElement("img");
         let existingImageUrls = rocket["flickr_images"].filter(imageUrl => imageExists(imageUrl));
@@ -99,6 +115,27 @@ async function loadRockets() {
     });
 }
 
+async function loadCrew() {
+    let response = await fetch("https://api.spacexdata.com/v4/crew");
+    let crew = await response.json();
+
+    let crewListDiv = document.getElementById("crew-list");
+    let crewItemName = document.getElementById("crew-item-name");
+    crew.forEach((member, index) => {
+        let crewImage = document.createElement("img");
+        crewImage.src = imageExists(member.image) ? member.image : "assets/unknown.jpg";
+        crewImage.style.order = index;
+        crewImage.addEventListener("mouseover", function () {
+            crewItemName.innerHTML = member.name;
+        });
+        crewImage.addEventListener("mouseout", function() {
+            crewItemName.innerHTML = "";
+        })
+
+        crewListDiv.appendChild(crewImage);
+    });
+}
+
 function loadPage() {
     let pathDirectories = window.location.pathname.split("/");
     let currentPage = pathDirectories[pathDirectories.length - 1];
@@ -108,6 +145,9 @@ function loadPage() {
             break;
         case "rockets.html":
             loadRockets();
+            break;
+        case "crew.html":
+            loadCrew();
             break;
         default:
             break;

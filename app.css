@@ -363,6 +363,38 @@ li:hover {
 }
 
 
+/* CREW PAGE */
+
+.crew .list {
+    height: 245px;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin: 6vh 5vw 4vh 5vw;
+}
+
+.crew .list img {
+    flex: 0 0 auto;
+    object-fit: cover;
+    width: 80px;
+    height: 240px;
+    border: .4vh solid silver;
+    border-radius: 2vw;
+    filter: grayscale(100%);
+    margin-right: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.crew .list img:hover {
+    flex-grow: 4;
+    filter: grayscale(0%);
+    border: .4vh solid var(--accent-color);
+}
+
+.btn-arrow:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
 /* DEVELOPERS PAGE */
 
 .developers .list {
