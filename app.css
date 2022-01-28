@@ -122,6 +122,9 @@ li:hover {
     cursor: pointer;
 }
 
+p{
+    text-align: justify;
+}
 /* COLORS */
 
 .accent {
@@ -352,6 +355,7 @@ li:hover {
 
 .rockets .list div.rockets-item-active > img {
     filter: grayscale(0%);
+    height: 180px;
 }
 
 .rockets .list h3 {
