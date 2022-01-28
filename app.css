@@ -308,12 +308,12 @@ p{
 
 .dragons .list p {
     color: silver;
+    padding-right: 2%;
 }
 
 .dragons .list div.dragons-item-active p {
     margin-bottom: 5px;
 }
-
 
 /* ROCKETS PAGE */
 
@@ -355,15 +355,17 @@ p{
 
 .rockets .list div.rockets-item-active > img {
     filter: grayscale(0%);
-    height: 180px;
 }
 
 .rockets .list h3 {
     color: var(--accent-color);
+    padding: 2%;
+
 }
 
 .rockets .list p {
     color: silver;
+    padding: 2%;
 }
 
 
