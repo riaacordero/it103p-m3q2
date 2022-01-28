@@ -361,3 +361,11 @@ li:hover {
 .rockets .list p {
     color: silver;
 }
+
+
+/* DEVELOPERS PAGE */
+
+.developers .list {
+    min-height: 45vh;
+    gap: .2em;
+}
